@@ -5,5 +5,8 @@
     <qresource prefix="/images">
         <file>fondo.jpg</file>
         <file>capucho.png</file>
+        <file>Madera.png</file>
+        <file>papa.png</file>
+        <file>esmad.png</file>
     </qresource>
 </RCC>
