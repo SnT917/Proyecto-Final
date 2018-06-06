@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>capucho.png</file>
+        <file>esmad.png</file>
+        <file>fondo-logotipo.jpg</file>
+        <file>level-selector.jpg</file>
+        <file>Madera.png</file>
+        <file>icono.png</file>
+        <file>splash.png</file>
+        <file>level1.jpg</file>
+        <file>level2.jpg</file>
+        <file>level3.jpg</file>
+        <file>level4.jpg</file>
+        <file>level5.jpg</file>
+        <file>multi.png</file>
+    </qresource>
+    <qresource prefix="/Sounds">
+        <file>musica.mp3</file>
+    </qresource>
+</RCC>

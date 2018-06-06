@@ -1,15 +1,23 @@
 #ifndef MADERA_H
 #define MADERA_H
+#include "clasebase.h"
+#define dt 0.01
+#define es 0.35
 
-#include <QGraphicsPixmapItem>
-#include <QObject>
-#include <QGraphicsItem>
-#include <QMediaPlayer>
-
-class Madera:public QObject, public QGraphicsPixmapItem{
-    Q_OBJECT
+class Madera:public ClaseBase
+{
 public:
-    Madera(QGraphicsItem * parent=0);
+    Madera(int _nivel);
+    QRectF boundingRect()const;
+    void paint(QPainter *painter,const QStyleOptionGraphicsItem *option, QWidget *widget);
+    void colision();
+    ~Madera();
+
+protected:
+    void advance(int phase);
+
 };
 
-#endif // MADERA_H
+
+#endif // CAJA_H
+
