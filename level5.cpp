@@ -113,7 +113,7 @@ Level5::Level5(QWidget *parent) :
     timer=new QTimer();
     connect(timer,SIGNAL(timeout()),scene,SLOT(advance()));
     connect(timer,SIGNAL(timeout()),this,SLOT(agregar()));
-    timer->start(0.1);
+    timer->start(3);
 
 }
 
@@ -123,9 +123,11 @@ Level5::~Level5()
 }
 void Level5::on_pushButton_clicked()
 {
+    timer->stop();
+    scene->clear();
+    close();
     ventana *v =new ventana;
     v->show();
-    close();
 }
 void Level5::agregar()
 {
