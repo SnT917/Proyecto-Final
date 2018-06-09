@@ -100,7 +100,7 @@ Level3::Level3(QWidget *parent) :
     timer=new QTimer();
     connect(timer,SIGNAL(timeout()),scene,SLOT(advance()));
     connect(timer,SIGNAL(timeout()),this,SLOT(agregar()));
-    timer->start(0.5);
+    timer->start(3);
 }
 
 Level3::~Level3()
@@ -109,9 +109,11 @@ Level3::~Level3()
 }
 void Level3::on_pushButton_clicked()
 {
+    timer->stop();
+    scene->clear();
+    close();
     ventana *v =new ventana;
     v->show();
-    close();
 }
 void Level3::agregar()
 {
