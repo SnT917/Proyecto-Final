@@ -3,7 +3,7 @@
 #include "clasebase.h"
 #define dt 0.01
 #define es 0.35
-#define k 1.55*0.01*3.14159265358979323846*0.5
+//#define k 1.55*0.01*3.14159265358979323846*0.5
 //#define r 0.2
 
 #include <QGraphicsPixmapItem>
@@ -19,6 +19,7 @@ public:
     void colision();
     void posicionave();
     ~Capucho();
+    int k =1.55*0.01*3.14159265358979323846*0.5;
     double getPuntaje() const;
     void setPuntaje(double value);
 private:
