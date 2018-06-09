@@ -11,6 +11,8 @@
 #include "Capucho.h"
 #include "Esmad.h"
 #include "Score.h"
+#include "options.h"
+#include <QGraphicsTextItem>
 
 namespace Ui {
 class Level1;
@@ -36,7 +38,10 @@ private:
     QList <Madera*> caja;
     QList<Capucho*> ave;
     QList <Esmad*> cerdo;
+    Score * score;
     QGraphicsTextItem *puntaje;
+    int contpajaros=2;
+    Options * opciones;
 
 };
 

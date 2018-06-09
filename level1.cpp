@@ -2,6 +2,9 @@
 #include "ui_level1.h"
 #include "ventana.h"
 #include "ui_ventana.h"
+#include "options.h"
+#include "ui_options.h"
+#include <QGraphicsTextItem>
 #include <QDebug>
 #include <QFont>
 #include "Score.h"
@@ -79,11 +82,13 @@ Level1::Level1(QWidget *parent) :
     cerdo.last()->setPos(820,-6000);
     scene->addItem(cerdo.last());
 
+    score= new Score;
+    scene->addItem(score);
+
     timer=new QTimer();    //Create the timer
     connect(timer,SIGNAL(timeout()),scene,SLOT(advance()));
     connect(timer,SIGNAL(timeout()),this,SLOT(agregar()));
-    timer->start(0.1);
-
+    timer->start(3);
 }
 
 Level1::~Level1()
@@ -93,9 +98,11 @@ Level1::~Level1()
 
 void Level1::on_pushButton_clicked() //push button "volver"
 {
+    timer->stop();
+    scene->clear();
+    close();
     ventana *v =new ventana;
     v->show();
-    close();
 }
 void Level1::agregar()
 {
@@ -105,6 +112,16 @@ void Level1::agregar()
         ave.last()->setPos(140,450);
         ave.last()->setScale(1.2);
         scene->addItem(ave.last());
+        score->increase();
+        contpajaros-=1;
     }
+    if (contpajaros == -1){
+        timer->stop();
+        opciones = new Options;
+        opciones->show();
+        scene->clear();
+        close();
 
+
+    }
 }
