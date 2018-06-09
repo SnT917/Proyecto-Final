@@ -24,8 +24,8 @@ void Esmad::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 void Esmad::advance(int phase)
 {
     if(!phase)return;
-
     colision();
+
     if(vida<=0){
         scene()->removeItem(this);
     }
