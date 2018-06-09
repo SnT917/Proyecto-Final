@@ -1,12 +1,11 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-05-21T11:20:59
+# Project created by QtCreator 2018-05-25T12:36:09
 #
 #-------------------------------------------------
 
-QT       += core gui \
-         multimedia
-
+QT       += core gui sql  \
+            multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,16 +26,58 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
+        mainwindow.cpp \
+    ventana.cpp \
     Capucho.cpp \
-    Game.cpp \
-    Score.cpp
+    Esmad.cpp \
+    Madera.cpp \
+    Score.cpp \
+    multiplayer.cpp \
+    login.cpp \
+    registro.cpp \
+    clasebase.cpp \
+    level1.cpp \
+    level2.cpp \
+    level3.cpp \
+    level4.cpp \
+    level5.cpp \
+    multi.cpp \
+    objetos.cpp \
+    options.cpp
 
 HEADERS += \
-    Score.h \
+        mainwindow.h \
+    ventana.h \
     Capucho.h \
-    Game.h
+    Esmad.h \
+    Madera.h \
+    Score.h \
+    multiplayer.h \
+    login.h \
+    registro.h \
+    clasebase.h \
+    level1.h \
+    level2.h \
+    level3.h \
+    level4.h \
+    level5.h \
+    multi.h \
+    objetos.h \
+    options.h
 
-FORMS +=
+FORMS += \
+        mainwindow.ui \
+    ventana.ui \
+    multiplayer.ui \
+    login.ui \
+    registro.ui \
+    level1.ui \
+    level2.ui \
+    level3.ui \
+    level4.ui \
+    level5.ui \
+    multi.ui \
+    options.ui
 
 RESOURCES += \
-    res.qrc
+    gif.qrc
