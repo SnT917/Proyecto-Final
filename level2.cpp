@@ -64,7 +64,7 @@ Level2::Level2(QWidget *parent) :
     timer=new QTimer();
     connect(timer,SIGNAL(timeout()),scene,SLOT(advance()));
     connect(timer,SIGNAL(timeout()),this,SLOT(agregar()));
-    timer->start(2.5);
+    timer->start(3);
 
 }
 
@@ -75,9 +75,11 @@ Level2::~Level2()
 
 void Level2::on_pushButton_clicked()
 {
+    timer->stop();
+    scene->clear();
+    close();
     ventana *v =new ventana;
     v->show();
-    close();
 }
 void Level2::agregar()
 {
