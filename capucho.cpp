@@ -13,18 +13,23 @@ Capucho::Capucho(int _nivel):ClaseBase(0,0,10,400000,_nivel), angulo(0),fr(0),pu
 void Capucho::colision()
 {
     posicionave();
-
     QList<QGraphicsItem*> colisionadores = collidingItems(Qt::IntersectsItemBoundingRect);
     for (size_t i = 0, n = colisionadores.size(); i < n; ++i){
         Madera* caja = dynamic_cast<Madera*>(colisionadores[i]);  //define madera as colisionadores
         Esmad* cerdo= dynamic_cast<Esmad*>(colisionadores[i]);    //define madera as colisionadores
-       if(caja)//capucho collides with caja
+       if(caja){//capucho collides with caja
+
             if(y()+30>caja->y() and y()+30<caja->y()+30){
-                vy=0; ay=0;}
+                vy=0;
+                ay=0;
+            }
+       }
 
        if(cerdo)//capucho colides with esmad
            if(y()+30>cerdo->y() and y()+30<cerdo->y()+30){
-              vy=0; ay=0;}
+              vy=0;
+              ay=0;
+           }
     }
 }
 
