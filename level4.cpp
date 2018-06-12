@@ -1,4 +1,5 @@
 #include "level4.h"
+#include "options4.h"
 #include "ui_level4.h"
 #include "ventana.h"
 #include "ui_ventana.h"
@@ -94,6 +95,10 @@ Level4::Level4(QWidget *parent) :
     cerdo.last()->setPos(900,463);
     scene->addItem(cerdo.last());
 
+
+    score= new Score;
+    scene->addItem(score);
+
     timer=new QTimer();
     connect(timer,SIGNAL(timeout()),scene,SLOT(advance()));
     connect(timer,SIGNAL(timeout()),this,SLOT(agregar()));
@@ -120,6 +125,15 @@ void Level4::agregar()
         ave.last()->setPos(140,450);
         ave.last()->setScale(1.2);
         scene->addItem(ave.last());
+        score->increase();
+        contpajaros-=1;
+    }
+    if (contpajaros == -1){
+        timer->stop();
+        opciones = new Options4;
+        opciones->show();
+        scene->clear();
+        close();
     }
 
 }

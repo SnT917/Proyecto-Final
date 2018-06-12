@@ -4,6 +4,7 @@
 #include "clasebase.h"
 #include "level1.h"
 
+extern Level1 * level1;
 
 Esmad::Esmad(int _nivel):ClaseBase(0,0,20,65000,_nivel){}
 
@@ -13,7 +14,7 @@ QRectF Esmad::boundingRect() const
     else return QRectF(-20,-20,40,40);
 }
 
-void Esmad::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void Esmad::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)//set image
 {
     QPixmap pixmap;
     pixmap.load(":/Images/esmad.png");
@@ -27,10 +28,10 @@ void Esmad::advance(int phase)
     colision();
 
     if(vida<=0){
-        scene()->removeItem(this);
+        scene()->removeItem(this);    //remove esmad if collides with capucho
+        puntaje+=50;
     }
 }
-
 
 void Esmad::colision(){
     posicion();

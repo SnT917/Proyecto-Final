@@ -6,7 +6,6 @@
 #include "clasebase.h"
 #include <QDebug>
 
-
 Capucho::Capucho(int _nivel):ClaseBase(0,0,10,400000,_nivel), angulo(0),fr(0),puntaje(0)
 {;}
 
@@ -15,13 +14,15 @@ void Capucho::colision()
     posicionave();
     QList<QGraphicsItem*> colisionadores = collidingItems(Qt::IntersectsItemBoundingRect);
     for (size_t i = 0, n = colisionadores.size(); i < n; ++i){
-        Madera* caja = dynamic_cast<Madera*>(colisionadores[i]);  //define madera as colisionadores
-        Esmad* cerdo= dynamic_cast<Esmad*>(colisionadores[i]);    //define madera as colisionadores
+
+       Madera* caja = dynamic_cast<Madera*>(colisionadores[i]);  //define madera as colisionadores
+       Esmad* cerdo= dynamic_cast<Esmad*>(colisionadores[i]);    //define madera as colisionadores
        if(caja){//capucho collides with caja
 
             if(y()+30>caja->y() and y()+30<caja->y()+30){
                 vy=0;
                 ay=0;
+
             }
        }
 
@@ -29,6 +30,7 @@ void Capucho::colision()
            if(y()+30>cerdo->y() and y()+30<cerdo->y()+30){
               vy=0;
               ay=0;
+
            }
     }
 }
@@ -61,7 +63,7 @@ QRectF Capucho::boundingRect() const
 {
     if(nivel==1) return QRectF(0,0,30,30);
 }
-void Capucho::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void Capucho::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)  //set image
 {
     QPixmap pixmap;
     pixmap.load(":/Images/capucho.png");

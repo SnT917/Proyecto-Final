@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Capucho's Bomb Adventure</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gif.qrc">
+    <normaloff>:/Images/icono.png</normaloff>:/Images/icono.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGraphicsView" name="graphicsView">
@@ -39,12 +43,17 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="smallDecimalPoint">
+     <bool>false</bool>
+    </property>
     <property name="segmentStyle">
      <enum>QLCDNumber::Flat</enum>
     </property>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="gif.qrc"/>
+ </resources>
  <connections/>
 </ui>

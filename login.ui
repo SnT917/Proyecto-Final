@@ -16,6 +16,10 @@
   <property name="windowTitle">
    <string>Login</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="gif.qrc">
+    <normaloff>:/Images/icono.png</normaloff>:/Images/icono.png</iconset>
+  </property>
   <widget class="QCommandLinkButton" name="commandLinkButton">
    <property name="geometry">
     <rect>
@@ -98,6 +102,8 @@
   <zorder>Nick</zorder>
   <zorder>Contra</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="gif.qrc"/>
+ </resources>
  <connections/>
 </ui>

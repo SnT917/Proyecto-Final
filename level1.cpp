@@ -121,7 +121,5 @@ void Level1::agregar()
         opciones->show();
         scene->clear();
         close();
-
-
     }
 }

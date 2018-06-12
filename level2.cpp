@@ -1,6 +1,7 @@
 #include "level2.h"
 #include "ui_level2.h"
 #include "ventana.h"
+#include "options2.h"
 #include "ui_ventana.h"
 #include <QDebug>
 #include <QFont>
@@ -60,6 +61,9 @@ Level2::Level2(QWidget *parent) :
         caja.last()->setPos(1000,y3);
         scene->addItem(caja.last());
         }
+    score= new Score;
+    scene->addItem(score);
+
 
     timer=new QTimer();
     connect(timer,SIGNAL(timeout()),scene,SLOT(advance()));
@@ -89,6 +93,16 @@ void Level2::agregar()
         ave.last()->setPos(140,450);
         ave.last()->setScale(1.2);
         scene->addItem(ave.last());
+        score->increase();
+        contpajaros-=1;
+    }
+
+    if (contpajaros == -1){
+        timer->stop();
+        opciones = new Options2;
+        opciones->show();
+        scene->clear();
+        close();
     }
 
 }

@@ -110,6 +110,10 @@ Level5::Level5(QWidget *parent) :
     cerdo.last()->setPos(700,63);
     scene->addItem(cerdo.last());
 
+    score= new Score;
+    scene->addItem(score);
+
+
     timer=new QTimer();
     connect(timer,SIGNAL(timeout()),scene,SLOT(advance()));
     connect(timer,SIGNAL(timeout()),this,SLOT(agregar()));
@@ -137,6 +141,15 @@ void Level5::agregar()
         ave.last()->setPos(140,450);
         ave.last()->setScale(1.2);
         scene->addItem(ave.last());
+        score->increase();
+        contpajaros-=1;
+    }
+    if (contpajaros == -1){
+        timer->stop();
+        opciones = new Options5;
+        opciones->show();
+        scene->clear();
+        close();
     }
 
 }

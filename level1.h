@@ -23,6 +23,7 @@ class Level1 : public QDialog
     Q_OBJECT
 
 public:
+    Score * score;
     explicit Level1(QWidget *parent = 0);
     ~Level1();
 public slots:
@@ -38,9 +39,8 @@ private:
     QList <Madera*> caja;
     QList<Capucho*> ave;
     QList <Esmad*> cerdo;
-    Score * score;
     QGraphicsTextItem *puntaje;
-    int contpajaros=2;
+    int contpajaros=15;
     Options * opciones;
 
 };

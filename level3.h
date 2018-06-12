@@ -7,6 +7,7 @@
 #include <QTimer>
 #include <QWidget>
 #include "clasebase.h"
+#include "options3.h"
 #include "Madera.h"
 #include "Capucho.h"
 #include "Esmad.h"
@@ -38,6 +39,9 @@ private:
     QList<Capucho*> ave;
     QList <Esmad*> cerdo;
     QGraphicsTextItem *puntaje;
+    Score * score;
+    int contpajaros=15;
+    Options3 * opciones;
 };
 
 #endif // LEVEL3_H

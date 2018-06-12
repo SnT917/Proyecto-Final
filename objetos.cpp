@@ -11,7 +11,7 @@ objetos::objetos(int _x, int _y, int _ancho, int _largo, QString _image)
 QRectF objetos:: boundingRect() const{
     return QRectF(x,y,ancho,largo);
 }
-void objetos::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget){
+void objetos::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget){  //set image
     QPixmap pixmap;
     pixmap.load(image);
     painter-> drawPixmap(boundingRect(), pixmap,pixmap.rect());

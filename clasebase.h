@@ -28,7 +28,7 @@ public:
     void setVida(double value);
     void setNivel(int value);
 
-    virtual ~ClaseBase();
+    ~ClaseBase();
 
 
 

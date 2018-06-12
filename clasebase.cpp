@@ -4,10 +4,10 @@
 #define es 0.35
 
 
-ClaseBase::ClaseBase():vx(0),vy(0),masa(0),ay(0),ax(0),vida(0),distancia(0),angulo(0)
+ClaseBase::ClaseBase():vx(0),vy(0),masa(0),ay(0),ax(0),vida(0),distancia(0),angulo(0)  //constructor
 {}
 
-ClaseBase::ClaseBase(double _vx, double _vy, double _masa, double _vida,int _nivel):ax(0),distancia(151),angulo(0)
+ClaseBase::ClaseBase(double _vx, double _vy, double _masa, double _vida,int _nivel):ax(0),distancia(151),angulo(0) //constructor
 {
     vx=_vx;
     vy=_vy;
@@ -48,7 +48,7 @@ void ClaseBase::posicion()
 
 void ClaseBase::aceleracion()   //if the capucho is launched, its acceleration changes
 {
-    if(y()==450 and x()==140){ //inicial position of the capucho
+    if(y()==450 and x()==140){  //inicial position of the capucho
         ay=0;
     }
     else{

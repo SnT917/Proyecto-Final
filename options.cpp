@@ -6,8 +6,9 @@
 #include "ui_level1.h"
 #include "level2.h"
 #include "ui_level2.h"
+#include "esmad.h"
 
-
+//todas las clases options son para mostrar siguiente nivel, reintentar o salir.
 Options::Options(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Options)
@@ -20,7 +21,7 @@ Options::~Options()
     delete ui;
 }
 
-void Options::on_pushButton_clicked()
+void Options::on_pushButton_clicked() //next level
 {
     close();
     Level2 * siguiente;
@@ -28,7 +29,7 @@ void Options::on_pushButton_clicked()
     siguiente->show();
 }
 
-void Options::on_pushButton_3_clicked()
+void Options::on_pushButton_3_clicked()  //retry
 {
     close();
     Level1 * reintentar;
@@ -36,7 +37,7 @@ void Options::on_pushButton_3_clicked()
     reintentar->show();
 }
 
-void Options::on_pushButton_2_clicked()
+void Options::on_pushButton_2_clicked()  //exit
 {
     close();
     salir= new MainWindow;

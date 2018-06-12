@@ -13,9 +13,11 @@ public:
     QRectF boundingRect()const;
     void paint(QPainter *painter,const QStyleOptionGraphicsItem *option, QWidget *widget);
     ~Esmad();
+    int puntaje=0;
 
 protected:
    void advance(int phase);
+
 };
 
 #endif // ESMAD_H

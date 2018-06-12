@@ -22,8 +22,9 @@ public:
     int k =1.55*0.01*3.14159265358979323846*0.5;
     double getPuntaje() const;
     void setPuntaje(double value);
+    int puntaje;
 private:
-    double angulo,fr,puntaje;
+    double angulo,fr;
 
 protected:
     void advance(int phase);

@@ -27,7 +27,9 @@ void Madera::advance(int phase)
     if(!phase)return;
 
     colision(); //check the collision
-    if(vida<=0){scene()->removeItem(this);} //remove item madera
+    if(vida<=0){
+        scene()->removeItem(this);//remove item madera
+    }
 }
 
 void Madera::colision()
@@ -53,6 +55,8 @@ void Madera::colision()
                 vy=0;
                 caja->setAy(0);
                 caja->setVy(0);
+
+                //para ver bien cuando una caja choca con otra
                 if((y()+40>caja->y() and y()+40<caja->y()+2) and scene()->collidingItems(caja).length()==1 and caja->y()<555)caja->aceleracion();
                 if((caja->y()+40>y() and caja->y()+40<y()+2) and scene()->collidingItems(this).length()==1 and y()<555)aceleracion();}
         }

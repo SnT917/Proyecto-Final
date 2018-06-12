@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Level1</class>
  <widget class="QDialog" name="Level1">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -77,19 +80,6 @@
    </property>
    <property name="text">
     <string>Volver</string>
-   </property>
-  </widget>
-  <widget class="QLCDNumber" name="lcdNumber">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>80</y>
-     <width>64</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="segmentStyle">
-    <enum>QLCDNumber::Flat</enum>
    </property>
   </widget>
  </widget>

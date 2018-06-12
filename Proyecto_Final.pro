@@ -43,7 +43,11 @@ SOURCES += \
     level5.cpp \
     multi.cpp \
     objetos.cpp \
-    options.cpp
+    options.cpp \
+    options2.cpp \
+    options3.cpp \
+    options4.cpp \
+    options5.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -63,7 +67,11 @@ HEADERS += \
     level5.h \
     multi.h \
     objetos.h \
-    options.h
+    options.h \
+    options2.h \
+    options3.h \
+    options4.h \
+    options5.h
 
 FORMS += \
         mainwindow.ui \
@@ -77,7 +85,11 @@ FORMS += \
     level4.ui \
     level5.ui \
     multi.ui \
-    options.ui
+    options.ui \
+    options2.ui \
+    options3.ui \
+    options4.ui \
+    options5.ui
 
 RESOURCES += \
     gif.qrc

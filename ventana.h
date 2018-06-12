@@ -16,6 +16,7 @@ class ventana : public QWidget
 public:
     explicit ventana(QWidget *parent = 0);
     ~ventana();
+    int puntaje=50;
 
 private slots:
     void on_pushButton_2_clicked();

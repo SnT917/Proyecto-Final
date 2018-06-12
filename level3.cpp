@@ -96,6 +96,9 @@ Level3::Level3(QWidget *parent) :
         scene->addItem(caja.last());
         }
 
+    score= new Score;
+    scene->addItem(score);
+
 
     timer=new QTimer();
     connect(timer,SIGNAL(timeout()),scene,SLOT(advance()));
@@ -123,6 +126,15 @@ void Level3::agregar()
         ave.last()->setPos(140,450);
         ave.last()->setScale(1.2);
         scene->addItem(ave.last());
+        score->increase();
+        contpajaros-=1;
+    }
+    if (contpajaros == -1){
+        timer->stop();
+        opciones = new Options3;
+        opciones->show();
+        scene->clear();
+        close();
     }
 
 }

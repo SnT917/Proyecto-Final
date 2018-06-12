@@ -24,10 +24,10 @@ multi::multi(QWidget *parent) :
     scene-> addItem(l3);
     scene-> addItem(l4);
 
-    dinosaurio=new objetos(20,160,30,40,":/Images/capucho.png");
+    dinosaurio=new objetos(20,135,30,40,":/Images/capucho.png");
     scene->addItem(dinosaurio);
 
-    cactus=new objetos(470,160,25,40,":/Images/esmad.png");
+    cactus=new objetos(470,135,25,40,":/Images/esmad.png");
     scene-> addItem(cactus);
 
     downdino=new objetos(-100,174,45,25,":/Images/capucho.png");
@@ -78,7 +78,11 @@ void multi::actualizar(){
     if(dinosaurio->collidesWithItem(cactus)){
 
         timer->stop();
-
+        cactus->setPos(-1000,1000);
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Capucho's Bomb Adventure");
+        msgBox.setText("Perdiste, Presiona enter para que empiece el siguiente jugador");
+        msgBox.exec();
     }
 
     if(cont==10){
@@ -97,8 +101,8 @@ void multi::keyPressEvent(QKeyEvent* accion){
 }
 void multi::keyReleaseEvent(QKeyEvent* accion){
     if(accion->key()==Qt::Key_Enter){
-
-        close();
+        puntaje=0;
+        timer->start();
 
     }
 }
